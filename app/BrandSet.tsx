@@ -34,7 +34,7 @@ const handleBrand = (e: MouseEvent<HTMLButtonElement>) => {
     return (
       <div className="p-3 flex flex-col justify-center items-center space-y-2">
         <div>{item.title}</div>
-        <Image className='w-[30%] h-auto' src={item.image} alt={item.title} loading="lazy" />
+        <Image src={item.image} alt={item.title} width={150} height={150} />
         <a href={item.url} target='_blank' className='opacity-0 group-hover:opacity-100 transition-opacity duration-300'><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Buy Me</button></a>
         <div>Brand: {item.brand}</div>
         <div className='text-emerald-400 text-[25px]'>Price: {item.price}</div>

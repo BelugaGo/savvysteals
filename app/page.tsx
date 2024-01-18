@@ -1,9 +1,28 @@
+import React from 'react';
+import BrandSet from './BrandSet';
+import { connectToDatabase } from '@/lib/mongodb';
 
-export default function Home() {
+interface Product {
+    title: string;
+    price: string;
+    storage: string;
+    color: string;
+    brand: string;
+    image: string;
+    url: string;
+  }
+  
+const Home: React.FC = async () => {
+    const { db } = await connectToDatabase();
+    const data = await db.collection('products').find({}).toArray();
+    const products: Product[] = JSON.parse(JSON.stringify(data));
+    
   return (
-    <div className="container mx-auto text-center">
-    <h1 className='text-3xl sm:text-5xl'>Hello World</h1>
-    <button className="btn btn-md btn-neutral">Random</button>
+   <div className='bg-white'>
+    <BrandSet initialProducts={products} />
     </div>
-  )
-}
+    
+ );
+};
+
+export default Home;

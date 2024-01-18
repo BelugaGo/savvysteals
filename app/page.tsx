@@ -12,14 +12,14 @@ interface Product {
     url: string;
   }
   
-const Home: React.FC = async () => {
-    const { db } = await connectToDatabase();
-    const data = await db.collection('products').find({}).toArray();
-    const products: Product[] = JSON.parse(JSON.stringify(data));
-    
+const Home = async () => {
+  const { db } = await connectToDatabase();
+  const data = await db.collection('products').find({}).toArray();
+  const initialProducts: Product[] = JSON.parse(JSON.stringify(data));
+
   return (
    <div className='bg-white'>
-    <BrandSet initialProducts={products} />
+    <BrandSet initialProducts={initialProducts} />
     </div>
     
  );

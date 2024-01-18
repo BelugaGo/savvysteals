@@ -19,7 +19,6 @@ const [loading , setLoading] = useState(false);
 const products = initialProducts;
 const productsFilter = ['Apple', 'Samsung', 'Google', 'Sony', 'LG', 'Nokia', 'OnePlus']
 
-
 const handleBrand = (e: MouseEvent<HTMLButtonElement>) => {
     const selectedBrand = e.currentTarget.value;
     setLoading(true);
@@ -59,7 +58,10 @@ return (
     </div>
     <>
     {products.map((item: Product, index: number) => {
-  if (item.brand === brand || item.brand.toUpperCase() === brand.toUpperCase()) { 
+      const itemBrandUpper = item.brand ? item.brand.toUpperCase() : '';
+      const brandUpper = brand.toUpperCase();
+
+  if (itemBrandUpper === brandUpper) { 
     return (
       <div key={index} className='group grid justify-items-center shadow-2xl rounded-md text-center border border-emerald-400 bg-white h-auto text-black hover:translate-y-[-25px] transition-all duration-300 cursor-pointer hover:border-[5px] border-emerald-400'>
            {loading ? <> <div className="bg-slate-900 h-full w-full fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 opacity-50"></div><span className="loading loading-dots w-[5rem] bg-red-700 fixed left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50"></span></> : <ProductItem item={item} />}

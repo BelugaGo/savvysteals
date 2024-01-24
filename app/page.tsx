@@ -12,7 +12,6 @@ interface Product {
     url: string;
     _id: string;
   }
-
   
 const Home = async () => {
   const { db } = await connectToDatabase();

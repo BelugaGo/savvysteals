@@ -9,9 +9,10 @@ interface Product {
   image: string;
   url: string;
   brand: string;
-  price: number;
+  price: string;
   storage: string;
   color: string;
+  _id: string;
 }
 
 
@@ -25,7 +26,7 @@ const router = useRouter()
 const handleBrand = (e: MouseEvent<HTMLButtonElement>) => {
   const selectedBrand = e.currentTarget.value
   setProducts(selectedBrand)
-  router.refresh()
+  router.refresh();
 }
 
 
@@ -38,7 +39,7 @@ return (
   </div> 
       {initialProducts.map((product: Product) => {
         if(products === product.brand) return (
-        <div className="group bg-white flex flex-col h-auto justify-center border items-center text-black text-center w-auto space-y-3 p-2 shadow rounded-md transition-[shadow,border,transform] ease-in-out duration-300 cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:border-[5px] border-emerald-400">
+        <div key={product._id} className="group bg-white flex flex-col h-auto justify-center border items-center text-black text-center w-auto space-y-3 p-2 shadow rounded-md transition-[shadow,border,transform] ease-in-out duration-300 cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:border-[5px] border-emerald-400">
         <h1 className="text-2xl">{product.title}</h1>
         <Image className="w-auto" src={product.image} alt={product.title} width={150} height={150} />
         <a href={product.url} target='_blank' className='opacity-0 group-hover:opacity-100 transition ease-out duration-300'><button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded btn btn-lg'>Buy Me</button></a>

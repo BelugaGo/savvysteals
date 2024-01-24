@@ -1,8 +1,6 @@
 'use client';
 import React, { useState, MouseEvent } from "react";
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-
 
 export const dynamic = 'force-dynamic'
 
@@ -22,13 +20,11 @@ interface Product {
 export default function Brandset({ initialProducts } : any)  {
 const uniqueBrands = Array.from(new Set(initialProducts.map((brands: any) => brands.brand)));
 const [products, setProducts] = useState('Apple')
-const router = useRouter()
 
 
 const handleBrand = (e: MouseEvent<HTMLButtonElement>) => {
   const selectedBrand = e.currentTarget.value
   setProducts(selectedBrand)
-  router.refresh();
 }
 
 

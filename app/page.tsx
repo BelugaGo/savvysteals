@@ -2,6 +2,8 @@ import React from 'react';
 import BrandSet from './BrandSet';
 import { connectToDatabase } from '@/lib/mongodb';
 
+export const dynamic = 'force-dynamic'
+
 interface Product {
     title: string;
     price: string;
@@ -18,7 +20,6 @@ const Home = async () => {
   const data = await db.collection('products').find({}).toArray();
   const initialProducts: Product[] = JSON.parse(JSON.stringify(data));
  
-
 
   return (
     <div className='bg-white flex justify-center'>

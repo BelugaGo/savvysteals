@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
 
+export const dynamic = 'force-dynamic'
+
 interface Product {
   title: string;
   image: string;

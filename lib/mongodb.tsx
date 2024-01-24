@@ -1,4 +1,3 @@
-// lib/mongodb.tsx
 import { MongoClient, Db } from 'mongodb';
 
 let cachedClient: MongoClient | null = null;

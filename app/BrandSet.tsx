@@ -2,7 +2,7 @@
 import React, { useState, MouseEvent } from "react";
 import Image from 'next/image'
 
-export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic';
 
 interface Product {
   title: string;

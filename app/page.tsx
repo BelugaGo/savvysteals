@@ -2,7 +2,7 @@ import React from 'react';
 import BrandSet from './BrandSet';
 import { connectToDatabase } from '@/lib/mongodb';
 
-//export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic';
 
 interface Product {
     title: string;

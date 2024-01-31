@@ -2,14 +2,14 @@
 import React, { useState, MouseEvent } from "react";
 import gsap from "gsap"; 
 import { useGSAP } from "@gsap/react";
-import Image from 'next/image'
-import AppleLogo from '/public/applewhite.svg'
-import SamsungLogo from '/public/samsung.svg'
-import GoogleLogo from '/public/google-1-1.svg'
-import OnePlusLogo from '/public/oneplus-2.svg'
-import LGLogo from '/public/lg-electronics.svg'
-import SonyLogo from '/public/sony.svg'
-import NokiaLogo from '/public/nokia-3.svg'
+import Image from 'next/image';
+import AppleLogo from '/public/applewhite.svg';
+import SamsungLogo from '/public/samsung.svg';
+import GoogleLogo from '/public/google-1-1.svg';
+import OnePlusLogo from '/public/oneplus-2.svg';
+import LGLogo from '/public/lg-electronics.svg';
+import SonyLogo from '/public/sony.svg';
+import NokiaLogo from '/public/nokia-3.svg';
 
 export const dynamic = 'force-dynamic';
 
@@ -32,15 +32,6 @@ const [products, setProducts] = useState('Apple')
 const [buttonPressed, setButtonPressed] = useState('Apple');
 const container = React.useRef<HTMLDivElement>(null);
 
-const logoMap = {
-  Apple: AppleLogo,
-  SAMSUNG: SamsungLogo,
-  Google: GoogleLogo,
-  OnePlus: OnePlusLogo,
-  LG: LGLogo,
-  Sony: SonyLogo,
-  Nokia: NokiaLogo,
-};
 
 const setLogo = (brand: string) => {
   const logoMap: { [key: string]: any } = {

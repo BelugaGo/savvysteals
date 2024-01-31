@@ -1,6 +1,8 @@
 import React from 'react';
 import BrandSet from './BrandSet';
 import { connectToDatabase } from '@/lib/mongodb';
+import SavvyPng from '../public/Images/savvylogo.png'
+import Image from 'next/image';
 
 export const dynamic = 'force-dynamic';
 
@@ -22,11 +24,13 @@ const Home = async () => {
  
 
   return (
-    <div className='bg-white flex justify-center'>
-    <div className="grid grid-cols-1 border-[3px] w-full gap-7 p-5 sm:grid-cols-2 md:grid-cols-3">
+    <>
+    <div className='bg-night flex justify-center overflow-hidden'>
+    <div className="grid gap-4 p-3 grid-cols-3 xl:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1">
     <BrandSet  initialProducts={initialProducts}/>
     </div>
     </div>
+    </>
  );
 }
 

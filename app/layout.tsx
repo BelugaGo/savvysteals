@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { Inter, Lora, } from 'next/font/google'
+import { Lora } from 'next/font/google'
+
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
 const lora = Lora({weight: ['400', '700'], subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -17,6 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com"/>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
+      <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet"/>
+      </head>
       <body className={lora.className}>{children}</body>
     </html>
   )

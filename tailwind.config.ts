@@ -1,3 +1,4 @@
+import { Montserrat } from 'next/font/google'
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -29,6 +30,8 @@ const config: Config = {
     },
     fontFamily: {
       honk: ['Honk', 'system-ui'],
+      lora: ['var(--font-lora)'],
+      montserrat: ['var(--font-montserrat)'],
      },
     },
     fontSize: {

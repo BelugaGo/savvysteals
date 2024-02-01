@@ -72,17 +72,17 @@ useGSAP(() => {
 return (
       <>
       <div className="text-center col-span-full relative flex flex-col justify-center items-center">
-    <h1 className="text-white text-8xl text-center font-honk xl:text-9xl md:text-6xl xs:text-5xl">Savvy Steals</h1>
+    <h1 className="text-8xl text-center bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text font-montserrat font-black xl:text-9xl md:text-6xl xs:text-4xl">Savvy Steals</h1>
     <Image className="z-0 logoappear h-auto" src={setLogo(products)} alt={products} width={150} height={100} />
       </div>
    <div ref={container} className='overflow-scroll hide-scrollbar col-span-full text-black p-4 text-center space-x-3 whitespace-nowrap'>
   {uniqueBrands.map((products: any) => (
-  <button key={products} onClick={handleBrand} value={products} className={`opacity-0 alltogether btn h-auto inline-block transition-all duration-300 hover:bg-night-600 text-white font-bold py-2 px-4 rounded 4xl:text-6xl md:text-4xl sm:text-3xl  ${buttonPressed === products ? 'font-honk bg-night-600' : 'bg-tiffany_blue '}`}>{products?.toUpperCase()}</button>
+  <button key={products} onClick={handleBrand} value={products} className='opacity-0 alltogether btn h-auto inline-block transition-all duration-300 bg-night hover:bg-night-600 text-white font-bold py-2 px-4 rounded 4xl:text-6xl md:text-4xl sm:text-3xl'>{products?.toUpperCase()}</button>
   ))}
   </div> 
       {initialProducts.map((product: Product) => {
         if(products === product.brand) return (
-        <div key={product._id} className="z-10 group bg-white flex flex-col h-auto justify-evenly border items-center text-black text-center w-auto space-y-3 p-2 shadow rounded-md transition-[border,transform] ease-in-out duration-300 cursor-pointer hover:-translate-y-3 hover:border-[5px] border-emerald-400 animate-slide-in-bottom">
+        <div key={product._id} className="z-10 group bg-white flex flex-col h-auto font-lora justify-evenly border items-center text-black text-center w-auto space-y-3 p-2 shadow rounded-md transition-[border,transform] ease-in-out duration-300 cursor-pointer hover:-translate-y-3 hover:border-[5px] border-emerald-400 animate-slide-in-bottom">
         <h1 className="md:text-3xl xs:text-2xl">{product.title}</h1>
         <Image className="sm:w-auto xs:w-1/2" src={product.image} alt={product.title} width={150} height={150} />
         <a href={product.url} target='_blank' className='opacity-0 group-hover:opacity-100 transition ease-out duration-300'><button className='bg-tiffany_blue hover:bg-night-600 text-white font-bold py-2 px-4 rounded btn btn-lg'>Buy Me</button></a>

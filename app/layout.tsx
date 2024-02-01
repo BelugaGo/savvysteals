@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
-import { Lora } from 'next/font/google'
+import { Lora, Montserrat } from 'next/font/google'
 
 import './globals.css'
 
-const lora = Lora({weight: ['400', '700'], subsets: ['latin'] })
+const lora = Lora({weight: ['400', '700'], subsets: ['latin'], variable: '--font-lora'})
+const montserrat = Montserrat({weight: ['100','200','300','400', '700', '800', '900'], subsets: ['latin'], variable: '--font-montserrat'})
 
 export const metadata: Metadata = {
   title: 'Savvy Steals',
@@ -16,13 +17,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en"  className={`${lora.variable} ${montserrat.variable}`}>
       <head>
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
       <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet"/>
       </head>
-      <body className={lora.className}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }
